@@ -1,5 +1,5 @@
 <script>
-    const temperaturas = [22, 25, 19, 30, 28, 24, 27];
+
     //Problema: Temperaturas
     /*
     1. Criar uma função calcularMedia(temperaturas) para retornar a temperatura média.
@@ -8,5 +8,64 @@
     4. Criar um loop (while) para exibir um menu e permitir ao usuário escolher uma opção até decidir sair (opção 0).
     */
 
+    const temperaturas = [22, 25, 19, 30, 28, 24, 27];
+
+    function calcularMedia(temperatura) {
+
+        let quantidade = 0
+        for (const temperatura of temperaturas) {
+
+            soma = soma + temperatura;
+            quantidade++;
+        }
+
+        media = soma / quantidade;
+
+        alert(`Temperatura média: ${media}.`);
+
+        menu = Number(prompt(`Temperaturas:
+        1- média das temperaturas;
+        2- maior temperatura;
+        3- menor temperatura.`));
+
+        return menu
+    }
+
+    function encontrarMaisQuente(temperaturas) {
+        
+        let temperaturaQuente = temperaturas;
+
+        temperaturas.sort ((a, b) => a - b);
+
+        temperaturas.reverse ((a, b) => a - b);
+
+        alert(`Temperatura mais quente: ${temperaturaQuente[0]}.`);
+
+        menu = Number(prompt(`Temperaturas:
+        1- média das temperaturas;
+        2- maior temperatura;
+        3- menor temperatura.`));
+
+        return menu
+    }
+
+    function encontrarMaisFria(temperaturas) {
+        
+        let temperaturaFria = temperaturas;
+
+        temperaturas.sort ((a, b) => a - b);
+
+        alert(`Temperatura mais fria: ${temperaturaQuente[0]}.`);
+
+        menu = Number(prompt(`Temperaturas:
+        1- média das temperaturas;
+        2- maior temperatura;
+        3- menor temperatura.`));
+
+        return menu;
+    }
+
     
+
+
 </script>

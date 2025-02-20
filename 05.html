@@ -6,18 +6,123 @@
     3. Criar uma função listarItens() que exibe todos os itens da lista.
     4. Criar um loop(while) para permitir ao usuário interagir com as opções até escolher sair.
     */
-    
+
+    function adicionarItem(item, listaCompras) {
+
+        item = prompt(`informe o que voce deseja adicionar na lista `);
+        listaCompras.push(item);
+
+     
+    }
+
+    function removerItem(item, listaCompras) {
+
+        item = prompt(`informe o que voce deseja remover na lista `);
+
+        const posicao = listaCompras.indexOf(item);
+
+        if (posicao >= 0) {
+            listaCompras.splice(posicao, 1);
+        }
+    }
+
+    function listarCompras(listaCompras) {
+
+        alert(`Lista compras ${listaCompras.join(`;`)}`);
+    }
 
     let listaCompras = ["Arroz", "Feijão", "Leite"];
 
-    function adiciona(listaCompras) {
-        
-       if (adicionar == "Sim") {
-        
-       }
+    let continuar = prompt(`voce deseja continuar (s ou n)`);
 
+    let item = "";
+    let adiciona = "";
+    let remove = "";
+
+    while (continuar == "s") {
+
+        let adicionar = prompt(`Qual item voce deseja adicionar na lista ?`);
+
+        if (adicionar == "s") {
+            adicionarItem(item, listaCompras);
+        }
+
+        remover = prompt(`informe o que voce deseja remover na lista `);
+
+        if (remover == "s") {
+            removerItem(item, listaCompras);
+        }
+    }
+    while (continuar == "n") {
+        alert(`${listaCompras}`);
     }
 
-    let adicionar = prompt(`Qual item voce deseja adicionar na lista ?`);
+    listarCompras(listaCompras)
+
+</script>
+
+
+
+
+
+
+
+function adicionarItem(item, listaCompras) 
+    {
+        item = prompt(`Informe que item você gostaria de adicionar:`);
+        listaCompras.push(item);
+
+        continuar = prompt(`Deseja continuar as modificações na lista? (s/n)`);
+    }
+
+    function removerItem(item, listaCompras) 
+    {
+        item = prompt(`Informe qual item você gostaria de remover:`);
+
+        const posicao = listaCompras.indexOf(item);
+
+        if (posicao >= 0) 
+            {
+                listaCompras.splice(posicao, 1);
+            }
+
+        continuar = prompt(`Deseja continuar as modificações na lista? (s/n)`);
+    }
+
+    function listarItens(listaCompras) 
+    {
+        alert(`Lista de compras:
+            ${listaCompras.join(`; `)};`
+        );
+    }
+
+    let listaCompras = ["Arroz", "Feijão", "Leite"];
+
+    let continuar = prompt(`Deseja realizar modificações na lista? (s/n)`);
+
+    let item = "";
+
+    let adicionar = "";
+
+    let remover = "";
+
+    while (continuar === "s") 
+    {
+        adicionar = prompt(`Deseja adiconar um item a lista? (s/n)`);
+
+        if (adicionar === "s") 
+        {
+            adicionarItem(item, listaCompras);
+        }
+
+        remover = prompt(`Deseja remover um item da lista? (s/n)`);
+
+        if (remover === "s") 
+        {
+            removerItem(item, listaCompras);
+        }
+    }
+
+    listarItens(listaCompras)
     
 </script>
