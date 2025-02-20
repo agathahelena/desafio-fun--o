@@ -8,8 +8,7 @@
     4. Criar um loop (while) para exibir um menu e permitir ao usuário escolher uma opção até decidir sair (opção 0).
     */
 
-    const temperaturas = [22, 25, 19, 30, 28, 24, 27];
-
+    
     function calcularMedia(temperatura) {
 
         let quantidade = 0
@@ -55,7 +54,7 @@
 
         temperaturas.sort ((a, b) => a - b);
 
-        alert(`Temperatura mais fria: ${temperaturaQuente[0]}.`);
+        alert(`Temperatura mais fria: ${temperaturaFria[0]}.`);
 
         menu = Number(prompt(`Temperaturas:
         1- média das temperaturas;
@@ -64,6 +63,34 @@
 
         return menu;
     }
+
+    let  temperaturas = [22, 25, 19, 30, 28, 24, 27];
+
+    soma = 0;
+    media = 0;
+
+     let menu = Number(prompt(`Temperaturas:
+        1- média das temperaturas;
+        2- maior temperatura;
+        3- menor temperatura.`));
+
+        while (menu !== 0) 
+    {
+        switch (menu) {
+            case 1:
+                calcularMedia(temperaturas);
+                break;
+
+            case 2:
+                encontrarMaisQuente(temperaturas);
+                break;
+
+            case 3:
+                encontrarMaisFria(temperaturas);
+                break;
+        }
+    }
+
 
     
 
